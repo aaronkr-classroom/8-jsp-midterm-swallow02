@@ -1,4 +1,4 @@
-<!-- UT-NodeJS 중간고사 -->
+<!-- UT-NodeJS ì¤ê°ê³ ì¬ -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>UT-NodeJS 중간고사 | Thanks</title>
 
-    <!-- 학생 이름과 학번 -->
+    <!-- íì ì´ë¦ê³¼ íë² -->
     <meta name="author" content="???" />
     <meta name="description" content="???" />
 
-    <!-- CSS 파일에 대한 link테그를 수정하십시오 -->
+    <!-- CSS íì¼ì ëí linkíê·¸ë¥¼ ìì íì­ìì¤ -->
     <link rel="stylesheet" href="../public/css/style.css" />
     <link
       rel="stylesheet"
@@ -20,45 +20,14 @@
     <link href="../public/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../public/css/confetti.css" />
 
-    <!-- JS 파일에 대한 script테그를 수정하십시오 -->
+    <!-- JS íì¼ì ëí scriptíê·¸ë¥¼ ìì íì­ìì¤ -->
     <script defer src="../public/js/functions.js"></script>
   </head>
 
   <body>
-    <!-- HEADER -->
-    <header class="header">
-      <div class="container">
-        <div class="container-left">
-          <!-- 로고 -->
-          <figure class="logo">
-            <a href="/">
-              🚈
-              <h1 class="site-title">
-                <span class="ut-red">UT</span>-NodeJS 중간고사
-              </h1>
-            </a>
-          </figure>
+     <%@ include file="header.jsp" %>
 
-          <!-- 메뉴 -->
-          <nav class="menu">
-            <a
-              class="menu-item"
-              name="Transportation"
-              href="/transportation.html"
-              >교통</a
-            >
-            <a class="menu-item active" name="Contact" href="/contact.html"
-              >연락</a
-            >
-          </nav>
-
-          <!-- 반응형 메뉴 버튼 -->
-          <div id="menu-button">Menu</div>
-        </div>
-      </div>
-    </header>
-
-    <!-- MAIN 페이지 내용 -->
+    <!-- MAIN íì´ì§ ë´ì© -->
     <main class="">
       <div class="container col-xl-10 col-xxl-8 px-4 py-5">
         <div class="row align-items-center g-lg-5 py-5">
@@ -230,15 +199,31 @@
         <div class="confetti-0"></div>
       </div>
     </main>
+       <table border=1 cellspacing=0 cellpadding=0>
+     <tr>
+       <th>요청 파라미터 이름</th>
+       <th>요청 파라미터 값</th>
+     </tr>
+     <%@ page import="java.util.Enumeration" %>
+     <%
+     request.setCharacterEncoding("UTF-8");
+     Enumeration paramNames = request.getParameterNames();
+     
+     while(paramNames.hasMoreElements()){
+    	 String name = (String) paramNames.nextElement();
+    	 out.print("<tr>\n<td>"+ name + "</td>\n");
+    	 String value = request.getParameter(name);
+    	 out.print("<td>"+ value + "</td>\n</tr>\n");
+     }
+     
+     %>
+   </table>
 
-    <!-- FOOTER -->
-    <footer class="text-center fixed-bottom bg-dark text-bg-dark pt-3">
-      <p class="ut-red">
-        <span class="text-white">&copy; 2023</span> [[[ 학생의 이름과 학번 ]]]
-      </p>
-    </footer>
+  <%@ include file="footer.jsp" %>
 
-    <!-- Bootstrap의 JS -->
+    <!-- Bootstrapì JS -->
     <script src="../public/js/bootstrap.bundle.min.js"></script>
+    
+    
   </body>
 </html>

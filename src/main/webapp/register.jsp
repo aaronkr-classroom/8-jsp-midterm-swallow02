@@ -1,4 +1,8 @@
 <!-- UT-NodeJS 중간고사 -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,32 +28,7 @@
   </head>
 
   <body>
-    <!-- HEADER -->
-    <header class="header">
-      <div class="container">
-        <div class="container-left">
-          <!-- 로고 -->
-          <figure class="logo">
-            <a href="/">
-              🚈
-              <h1 class="site-title">
-                <span class="ut-red">UT</span>-NodeJS 중간고사
-              </h1>
-            </a>
-          </figure>
-
-          <!-- 메뉴 -->
-          <nav class="menu">
-            <a class="menu-item active" name="Contact" href="/register.html"
-              >가입</a
-            >
-          </nav>
-
-          <!-- 반응형 메뉴 버튼 -->
-          <div id="menu-button">Menu</div>
-        </div>
-      </div>
-    </header>
+     <%@ include file="header.jsp" %>
 
     <!-- MAIN 페이지 내용 -->
     <main class="">
@@ -70,7 +49,7 @@
             <!-- action 속성에서 맞는 파일 경로 입력하세요 -->
             <form
               class="p-4 p-md-5 border rounded-3 bg-light"
-              action="/"
+              action="thanks.jsp"
               method="post"
             >
               <div class="form-floating mb-3">
@@ -78,21 +57,43 @@
                   type="text"
                   class="form-control"
                   id="floatingName"
-                  placeholder="Name"
+                  placeholder="my first name"
                 />
-                <label for="floatingName">Name</label>
+                
+                 <input
+                  type="text"
+                  class="form-control"
+                  id="floatingName"
+                  placeholder="my last name"
+                />
+                
               </div>
-
-              <!--
-                #################
               
-                여기에 나머진 폼 코드를 작성하세요
-
-                #################
-              -->
               
+
+        
+    <p> <input type="text" name ="email" placeholder="Someone@example.com"> 
+    <input type="text" name ="number" placeholder="9712169979"></p>
+     <p> <input type ="text" name = "city" placeholder="MyCity"></p>  
+    <hr>
+    
+    <p>Gender</p>
+       <p> <input type = "radio" name = "gender" value = "남성" checked>Male</p>
+      <p> <input type = "radio" name = "gender" value = "여성" >Female </p>
+        
+     <hr>
+    <p>Hobbies</p> 
+  <p> <input type = "checkbox" name = "Cricket" checked>Cricket </p> 
+  <p> <input type = "checkbox" name = "Football" checked>Football </p>
+  <p> <input type = "checkbox" name = "Chess" checked>Chess </p> 
+  <hr>    
+    <p> <input type ="password" name = "passwd"></p>  
+             
+             
+             
+             
               <button class="w-100 btn btn-lg btn-primary ut-red" type="submit">
-                Submit
+                Register 
               </button>
               <hr />
             </form>
@@ -102,12 +103,7 @@
       </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="text-center fixed-bottom bg-dark text-bg-dark pt-3">
-      <p class="ut-red">
-        <span class="text-white">&copy; 2023</span> [[[ 학생의 이름과 학번 ]]]
-      </p>
-    </footer>
+   <%@ include file="footer.jsp" %>
 
     <!-- Bootstrap의 JS -->
     <script src="../public/js/bootstrap.bundle.min.js"></script>
